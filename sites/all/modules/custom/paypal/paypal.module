@@ -1,0 +1,73 @@
+<?php
+
+function paypal_menu() {
+  $items = array();
+  $items['paypal_payment_form_url'] = array(
+    'title' => 'Paypal K4 Mid-Atlantic',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('paypal_payment_form'),
+    'access callback' => true,
+    'type' => MENU_NORMAL_ITEM,
+  );
+  return $items;
+}
+
+function paypal_block_info() {
+  $blocks['paypal'] = array(
+    'info' => t('Paypal Form'),
+    'region' => 'content',
+    'visibility' => BLOCK_VISIBILITY_LISTED,
+    'pages' => "node/34",
+    'status' => 1,
+    'cache' => DRUPAL_NO_CACHE,
+  );
+  return $blocks;
+}
+
+function paypal_block_view($delta = '') {
+  $block = array();
+
+  switch ($delta) {
+    case 'paypal':
+      $block['subject'] = t('K4 Mid-Atlantic');
+      $block['content'] = drupal_get_form('paypal_payment_form');
+      break;
+  }
+  return  $block;
+}
+
+function paypal_payment_form($form, &$form_state) {
+  $form = array();
+  $options = array(
+    'Administrative Fee' => 'Administrative Fee', 
+    'Sponsorship' => 'Sponsorship',
+    'Membership' => 'Membership',
+    'Program-Education Fee' => 'Program-Education Fee',
+    'Other' => 'Other',
+  );
+  $form['#action'] = 'https://www.paypal.com/cgi-bin/webscr';
+  
+  $form['cmd'] = array(
+    '#type' => 'hidden',
+    '#value' => '_s-xclick',
+  );
+  $form['hosted_button_id'] = array(
+    '#type' => 'hidden',
+    '#value' => 'GYP6QA5F34N48',
+  );
+  $form['on0'] = array(
+    '#type' => 'hidden',
+    '#value' => 'K4 Mid-Atlantic',
+  );
+  $form['os0'] = array(
+  	'#title' => t('K4 Mid-Atlantic'),
+    '#type' => 'select',
+    '#options' => $options,
+  );
+  $form['submit'] = array(
+    '#type' => 'image_button',
+    '#src' => 'sites/default/files/btn_paynowCC_LG.gif',
+  );
+  $form['#attributes'] = array('target' => array('_blank'));
+  return $form;
+}

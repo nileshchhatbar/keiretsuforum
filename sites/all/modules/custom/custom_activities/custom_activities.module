@@ -1,0 +1,111 @@
+<?php
+/**
+ * Implementation of hook_js_alter().
+ * 
+ * To alter the javascript ported with the event calendar module.
+ *  
+ * @param array $javascript
+ */
+function custom_activities_js_alter(&$javascript) {
+  $javascript['sites/all/modules/event_calendar/event_popup/js/event_popup.js']['data'] = 'sites/all/modules/custom/custom_activities/js/event_popup_custom.js';
+}
+
+/**
+ * Implementation of hook_node_view().
+ * 
+ * To alter the node view to display the date as required.
+ * 
+ * @param object $node
+ * @param array $view_mode
+ * @param array $langcode
+ */
+function custom_activities_node_view($node, $view_mode, $langcode) {
+  if($node->type == 'event_calendar') {
+    $date_markup = $node->content['event_calendar_date']['0']['#markup'];
+    $date_time = explode(' - ' , $date_markup);
+    $node->content['event_calendar_date']['0']['#markup'] = $date_time['1'];
+  }
+}
+
+/*function custom_activities_init() {
+  //drupal_add_js("http://code.jquery.com/jquery-1.7.0.min.js" , "external");
+  //drupal_add_js(drupal_get_path('module', 'custom_activities') . '/js/jquery.tooltipster.min.js');
+  //drupal_add_js(drupal_get_path('module', 'custom_activities') . '/js/jquery.tooltipster.js');
+  //drupal_add_js("http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js" , "external");
+  
+  //drupal_add_js(drupal_get_path('module', 'custom_activities') . '/js/tooltip_custom.js');
+  //drupal_add_css(drupal_get_path('module', 'custom_activities') . '/tooltipster.css');
+}*/
+  
+function custom_activities_form_alter(&$form, &$form_state, $form_id) {
+	//print_r($form_id);//exit;
+  switch ($form_id) {
+    // Custom redirection for any webforms you choose
+    case 'webform_client_form_52':
+      //assigning the whitepaper hidden field value.
+      $whitepaper_nid = arg(1);
+      $whitepaper_node = node_load($whitepaper_nid);      
+      $whitepaper_title = $whitepaper_node->title;
+      $form['#node']->webform['components']['2']['value'] =  $whitepaper_title;
+      $form['submitted']['whitepaper_type']['#webform_component']['value'] =  $whitepaper_title;
+      $form['submitted']['whitepaper_type']['#default_value'] =  $whitepaper_title;
+      
+      // Set a hidden field for the parent node and add submit handler to handle redirect
+      if (empty($form_state['values']['redirect_override'])) {
+        // The redirect needs a normal path
+        $form['redirect_override'] = array(
+          '#type' => 'hidden',
+          '#value' => serialize($_GET['q']),
+        );
+        // But the action needs a url() path if errors happen
+        $form['#action'] = _tmc_patch_webform_get_current_path();
+      }
+    break;
+    
+    case 'webform_client_form_54':
+  		// Set a hidden field for the parent node and add submit handler to handle redirect
+      if (empty($form_state['values']['redirect_override'])) {
+        // The redirect needs a normal path
+        $form['redirect_override'] = array(
+          '#type' => 'hidden',
+          '#value' => serialize($_GET['q']),
+        );
+        // But the action needs a url() path if errors happen
+        $form['#action'] = _tmc_patch_webform_get_current_path();
+      }
+    break;
+      
+    //alter the blog comment form.
+    case 'comment_node_blog_form':
+    	//echo "<pre>";print_r($form);exit;
+    	$form['#validate'] = array(); 
+    	$form['#validate'][] = 'comment_form_validate';
+		  $form['#validate'][] = 'comment_notify_comment_validate_custom';
+		break;
+  }
+}
+
+function comment_notify_comment_validate_custom($comment) {
+	//print('fasfas');exit;
+  global $user;
+  $comment_email = $comment['field_blog_comment_email'][LANGUAGE_NONE]['0']['email']['#value'];
+  // We assume that if they are non-anonymous then they have a valid mail.
+  // For anonymous users, though, we verify that they entered a mail and let comment.module validate it is real.
+  if (!$user->uid && $comment['notify_settings']['notify']['#value'] && empty($comment_email)) {
+    form_set_error('mail', t('If you want to subscribe to comments you must supply a valid e-mail address.'));
+  }
+}
+
+// Get the proper path for the current page
+function _tmc_patch_webform_get_current_path() {
+  $url = drupal_lookup_path('alias', $_GET['q']);
+  if (empty($url)) {
+    $url = $_GET['q'];
+  }
+  // Front-page url should be empty
+  if ($url == "front") {
+    $url = "";
+  }
+  $url = url($url);
+  return $url;
+}

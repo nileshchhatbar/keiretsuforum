@@ -1,0 +1,4 @@
+name = Customization
+description = The module to customize the functionality.
+core = 7.x
+package = Customizations

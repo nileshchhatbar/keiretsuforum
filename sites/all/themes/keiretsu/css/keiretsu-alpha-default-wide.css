@@ -1,0 +1,8 @@
+/* This file will hold styles that are loaded using the same media query as the wide grid. */
+
+.sf-menu.sf-style-blue li li, .sf-menu.sf-style-blue li li li {
+    background: none repeat scroll 0 0 #333;
+}
+.sf-menu.sf-style-blue li li:hover{
+	background: none repeat scroll 0 0 #444;
+}

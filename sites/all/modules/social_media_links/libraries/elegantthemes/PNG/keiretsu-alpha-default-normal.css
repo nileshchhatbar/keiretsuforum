@@ -1,0 +1,274 @@
+/* This file will hold styles that are loaded using the same media query as the normal grid. */
+/* If you are using the default media queries provided by Omega, these styles will also
+ *  apply to the widescreen layout unless they are overridden by the widescreen styles. */
+ 
+ 
+ .sf-menu.sf-style-blue a.sf-with-ul, .sf-menu.sf-style-blue span.nolink.sf-with-ul {
+    padding: 0.75em;
+	font-size: 13px;
+	height:13px;
+	line-height: 13px;
+}
+
+.sf-menu.sf-style-blue a, .sf-menu.sf-style-blue span.nolink {
+    height: 14px;line-height: 14px;
+}
+
+.sf-menu.sf-style-blue li:hover, .sf-menu.sf-style-blue li.sfHover, .sf-menu.sf-style-blue a:focus, .sf-menu.sf-style-blue a:hover, .sf-menu.sf-style-blue a:active, .sf-menu.sf-style-blue span.nolink:hover, .sf-menu.sf-style-blue.sf-navbar li li {
+    background: none repeat scroll 0 0 #D63644;
+    color: #FFFFFF;
+    font-size: 13px;
+}
+
+
+.sf-menu.sf-style-blue a, .sf-menu.sf-style-blue span.nolink {
+    border: medium none;
+    color: #FFFFFF;
+    font-size: 13px;
+    padding: 0.75em;
+}
+
+
+.page-node #page #section-content #zone-content #region-homepage-content1 #block-block-2 {
+    background: url("http://www.keiretsuforum-midatlantic.com/Portals/188336/design_images/lro-bg.png") no-repeat scroll left top rgba(0, 0, 0, 0);
+    height: 149px;
+    margin: 0;
+    padding: 0;
+    width: 440px;
+}
+
+#block-block-2, #block-block-3, #block-block-5 {
+	border:none;
+	box-shadow:none;}
+	
+	
+/*#block-block-3, #block-block-5 {
+    padding: 20px 20px 0 185px;
+}*/
+	
+	
+.page-node #region-homepage-content1 {
+    border-bottom: medium none;
+    border-right: 2px solid #E5E5E5;
+    width: 49% !important;
+}
+
+
+.page-node #region-homepage-content2 {
+    background-color: #FFFFFF !important;
+    border-style: none;
+    border-width: 0;
+    padding: 5px;
+    width: 45.5%;
+}
+
+
+#block-superfish-2 {
+    height: 35px;}
+
+/*.page-node #zone-content{
+	background: url("/Portals/188336/design_images/column-bg.png") repeat-y scroll left top #FFFFFF;
+    
+    min-height: 500px;
+    padding: 0 0 20px;
+}*/
+
+
+.page-node #block-block-2 .content p{ font-size: 14px;
+    margin: 15px 15px 5px; padding: 5px 15px 0;}
+	
+	
+	
+#block-block-7, #block-block-8, #block-block-9, #block-block-10, #block-block-11, #block-block-12, #block-block-13, #block-block-14, #block-block-15 {
+    border-bottom: 1px solid #B2B2B2;
+    margin: 0 0 20px;
+    padding-bottom: 40px;
+}
+	
+	
+#block-block-7 h2.block-title, #block-block-8 h2.block-title, #block-block-9 h2.block-title, #block-block-10 h2.block-title, #block-block-11 h2.block-title, #block-block-12 h2.block-title, #block-block-13 h2.block-title, #block-block-14 h2.block-title, #block-block-15 h2.block-title {
+    color: #000000;
+    font-family: Georgia,"Times New Roman",Times,serif;
+    font-size: 18px;
+    font-weight: normal;
+    letter-spacing: 0.15px;
+    line-height: 115%;
+    margin: 15px 0 10px;
+}
+
+#block-block-7 p, #block-block-8 p, #block-block-9 p, #block-block-10 p, #block-block-11 p, #block-block-12 p, #block-block-13 p, #block-block-14 p, #block-block-15 p {
+	color: #414141;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.15px;
+    line-height: 145%;
+    margin: 5px 15px;
+    padding: 0;
+    text-align: left;
+    word-spacing: 0.05px;
+}
+
+.page-node #block-block-7 p, .page-node #block-block-8 p, .page-node #block-block-9 p, .page-node #block-block-10 p, .page-node #block-block-11 p, .page-node #block-block-12 p, .page-node #block-block-13 p, .page-node #block-block-14 p, .page-node #block-block-15 p {
+	color: #414141;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.15px;
+    line-height: 145%;
+    margin: 5px 0px 15px;
+    padding: 0;
+    text-align: left;
+    word-spacing: 0.05px;
+}
+
+
+.field-item.even > h1 {
+    font-size: 30px !important;
+}
+
+#node-page-46 #inner-content p {margin: 10px 15px 5px 0;}
+
+
+#block-views-calendar-block-3 h2.block-title {
+    color: #0000FF;
+    font-family: Verdana;
+    font-size: 18pt;
+    font-weight: bold;
+    margin: 10px;
+    text-align: center;
+}
+
+
+.view .date-nav-wrapper .date-heading h3 {
+    font-size: 33pt;
+    line-height: 75px;
+}
+
+#page #section-footer #zone-footer-wrapper #zone-footer #region-footer-first #block-block-3{
+
+background: url("/sites/all/modules/social_media_links/libraries/elegantthemes/PNG/nro-bg.png") no-repeat scroll left top rgba(0, 0, 0, 0);
+    height: 148px;
+    left: 0;
+    margin: 0;
+    padding: 20px 20px 0 185px;
+    position: relative;
+    top: 0px;
+    width: 230px;
+	border:none;
+	box-shadow:none;
+}
+
+#page #section-footer #zone-footer-wrapper #zone-footer #region-footer-first #block-block-5{
+    background: url("/sites/all/modules/social_media_links/libraries/elegantthemes/PNG/lro-bg.png") no-repeat scroll left top rgba(0, 0, 0, 0);
+    border: medium none;
+    box-shadow: none;
+    height: 149px;
+    left: 0;
+    margin: 0;
+    padding: 16px 20px 0 185px;
+    position: relative;
+    top: 5px;
+    width: 230px;
+}
+
+/*#region-sidebar-second {
+    background: url("http://www.keiretsuforum-midatlantic.com/Portals/188336/design_images/column-interior-bg.png") repeat-y scroll left top #FFFFFF;
+    border-style: none;
+    border-width: 0px;
+    margin: 0;
+    min-height: 500px;
+    padding: 5px;
+    width: 34%;
+}*/
+
+#node-page-43 h1 sup{
+	top: -1.2em;}
+	
+	
+
+/*#region-sidebar-second {
+    background-color: #E3E3E3;
+    border-width: medium medium 1px 1px;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+    min-height: 500px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 36.77%;
+}*/
+
+#node-page-35 #inner-content p img {
+padding-left: 187px;
+}
+
+#node-page-40 #inner-content p #img-1376848633469, #node-page-41 #inner-content p #img-1376848633469, #node-page-42 #inner-content p #img-1376848633469 {
+    margin-left: 324px !important;
+}
+
+
+#inner-content p #img-1376848633469 {
+    margin-left: 138px !important;
+}
+
+.utility {
+float: right; }
+
+#utility{padding: 10px 0 0 !important;}
+.inline li{margin-right:0;}
+
+#block-block-17 {
+    float: right; margin-top: 10px;}
+	
+	
+.block.block-social-media-links.block-social-media-links.block-social-media-links-social-media-links.odd.block-without-title {
+    float: right;  margin-left: 0px;}
+
+/*a.sf-depth-1.menuparent.sf-with-ul {
+    margin-top: 0;
+}*/
+
+
+.webform-component webform-component-textfield input{
+	width:100%;}
+	
+#webform-component-work-phone input, #webform-component-cell-phone input{
+	width: 67.6%;}
+#webform-component-address textarea{
+	width: 69.3% !important;}
+	
+	#webform-component-message textarea{width: 69.3%; height:100px;}
+	
+	#webform-component-please-contact-me-via, #webform-component-best-contact-time, #webform-component-subject{width:50%;}
+	
+	
+.resizable-textarea .grippie {
+    width: 69%;
+}
+
+#node-page-35 #inner-content img, #node-page-41 #img-1377196648973 {
+    max-width: 100%;
+    padding-left: 170px;
+}
+
+
+#zone-content {
+    background: url("http://keiretsu.php-dev.in/sites/all/modules/social_media_links/libraries/elegantthemes/PNG/column-interior-right-bg.png") repeat-y scroll 590px 0 #FFFFFF;
+    border-left: 1px solid #B5B5B5;
+    border-right: 1px solid #B5B5B5;
+    min-height: 500px;
+    padding: 20px 0 0;
+}
+
+#region-sidebar-second {
+    background-color:transparent;
+    border-width:medium medium 0px 0px;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+    min-height: 500px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    width: 36.77%;
+}
